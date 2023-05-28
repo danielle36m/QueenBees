@@ -44,7 +44,7 @@
         {/if}
         
         <button on:click>
-        Submit Photos
+            <a href="/results"> Submit Photos</a>
         </button>
     </div>
 </div>
