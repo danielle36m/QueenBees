@@ -9,7 +9,7 @@
 	</main>
 
 	<footer>
-		<p>visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to learn SvelteKit</p>
+		<p>visit <a href="https://media.tenor.com/jUMex_rdqPwAAAAd/among-us-twerk.gif">StyleForHue</a> to learn more!</p>
 	</footer>
 </div>
 
