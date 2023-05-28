@@ -1,4 +1,38 @@
 import colorsys
+import cv2
+import numpy as np
+
+def get_dominant_colors(image_path, num_colors):
+    # Load the image
+    image = cv2.imread(image_path)
+
+    # Convert BGR to RGB format
+    image = cv2.cvtColor(image, cv2.COLOR_BGR2RGB)
+
+    # Reshape the image to be a list of pixels
+    # pixels = image.reshape(-1, 3).astype(np.float32)
+    pixels = image.reshape((image.shape[0] * image.shape[1], 3))
+
+    # Convert pixels to the range [0, 1]
+    image = pixels
+    #pixels /= 255.0
+
+    # Perform K-means clustering to find the dominant colors
+    # criteria = (cv2.TERM_CRITERIA_EPS + cv2.TERM_CRITERIA_MAX_ITER, 10, 1.0)
+    # _, labels, colors = cv2.kmeans(pixels, num_colors, None, criteria, 10, cv2.KMEANS_RANDOM_CENTERS)
+
+    kmeans = KMeans(num_colors)
+    kmeans.fit(image)
+    # Convert colors back to the range [0, 255]
+    colors = kmeans.cluster_centers_
+    #colors *= 255.0
+
+    # Convert colors to integers
+    colors = colors.astype(int)
+
+    hex_array = ['#%02x%02x%02x' % (r, g, b) for r, g, b in colors]
+    
+    return hex_array
 
 def get_complementary_color(color):
     # Convert color from hexadecimal to RGB
