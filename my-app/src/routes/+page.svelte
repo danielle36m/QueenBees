@@ -28,7 +28,7 @@
         <h5>
             Select your main piece of clothing to build your outfit!
         </h5>
-        
+        <label for="many">Upload Clothing</label>
         <input
         bind:files
         id="many"
