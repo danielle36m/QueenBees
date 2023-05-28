@@ -10,6 +10,7 @@
             console.log(`${file}`);
             //console.log(`${file.name}: ${file.size} bytes`);
         }
+
     }
 </script>
     
@@ -27,7 +28,7 @@
         <h5>
             Select your main piece of clothing to build your outfit!
         </h5>
-        
+        <label for="many">Upload Clothing</label>
         <input
         bind:files
         id="many"
@@ -100,6 +101,23 @@
     .image-size {
         width: 200px;
         height: 200px;
+    }
+    input[type="file"] {
+        display: none;
+    }
+    label {
+        display: inline-block;
+        text-transform: uppercase;
+        color: #fff;
+        background: #ffcfd4;
+        text-align: center;
+        padding: 15px 40px;
+        font-size: 18px;
+        letter-spacing: 1.5px;
+        user-select: none;
+        cursor: pointer;
+        box-shadow: 5px 15px 25px rgba(0, 0, 0, 0.35);
+        border-radius: 3px; 
     }
     
 </style>
