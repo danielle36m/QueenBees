@@ -44,16 +44,17 @@
         {/each}
         <div class="submitPhotos">
             <button on:click>
-                Submit Photos
+                <a href="/results"> Submit Photos</a>
             </button>
         </div>
         {/if}
         
         <!-- <div class="submitPhotos">
             <button on:click>
-                Submit Photos
+              <a href="/results"> Submit Photos</a>
             </button>
         </div> -->
+
     </div>
 </div>
     
