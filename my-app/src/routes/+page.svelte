@@ -16,18 +16,19 @@
     
 <div class="root">
     <div class="pinkrectangle">
-        <!-- <div class="topBar"> -->
         <div class="headerName">
             StyleForHue
         </div>
-        <!-- </div> -->
+    </div>
 
-        <h2>
+    <div class="main">
+        <div class="uploadWardrobe">
             Upload Your Wardrobe
-        </h2>
-        <h5>
+        </div>
+        <div class="description">
             Select your main piece of clothing to build your outfit!
-        </h5>
+        </div>
+
         <label for="many">Upload Clothing</label>
         <input
         bind:files
@@ -41,31 +42,44 @@
         {#each Array.from(files) as file}
             <img class=image-size src={URL.createObjectURL(file)} alt="clothing">
         {/each}
+        <div class="submitPhotos">
+            <button on:click>
+                Submit Photos
+            </button>
+        </div>
         {/if}
         
-        <button on:click>
-        Submit Photos
-        </button>
+        <!-- <div class="submitPhotos">
+            <button on:click>
+                Submit Photos
+            </button>
+        </div> -->
     </div>
 </div>
     
 <style>
+    .center {
+        align-self: center;
+        place-items: center;
+    }
     button {
-        /* left: 10.8%; */
         height: 3rem;
-        width: 6rem;
-        background-color: #ffffff;
-        border-color: #dd7729;
-        color: #000000;
-        font-size: 1.15rem;
-        background-image: linear-gradient(45deg, #ef8635 50%, transparent 50%);
+        width: 10rem;
+        background-color: #ffcfd4;
+        border-color: #f9dfe2;
+        color: #ffffff;
+        font-size: 1rem;
+        text-transform: uppercase;
+        background-image: linear-gradient(45deg, #ffffff 50%, transparent 50%);
         background-position: 100%;
         background-size: 400%;
         transition: background 300ms ease-in-out;
+        transform: translateY(200%);
+        border-radius: 4px; 
     }
     button:hover {
         background-position: 0;
-        color: #ffffff;
+        color: #ffcfd4;
     }
     .root {
         width: 100%;
@@ -76,10 +90,6 @@
         height: 9%;
         background-color: #ffcfd4;
     }
-    /* .topBar {
-        top: 10%;
-        left: 5%;
-    } */
     .headerName {
         color: #fff7f7;
         font-size: 40px;
@@ -89,14 +99,26 @@
         left: 5%;
         padding: 0 .75em;
     }
-    h2 {
-        color: rgb(220, 113, 43);
-        text-align: center;
-        padding: 1.5em 0.5em 0.5em 0.5em;
+    .main {
+        display: grid;
+        place-items: center;
+        /* justify-content: center;
+        align-items: center; */
     }
-    h5 {
-        color: rgb(220,113,43);
+    .uploadWardrobe {
+        font-family: 'Crimson';
+        font-size: 30px;
+        font-weight: 600;
         text-align: center;
+        padding: 1em 0.5em 0em 0.5em;
+    }
+    .description {
+        width: 250px;
+        font-family: 'Work Sans';
+        font-size: 15px;
+        font-weight: 100;
+        text-align: center;
+        padding: 1em 0.5em 2.25em 0.5em;
     }
     .image-size {
         width: 200px;
@@ -118,6 +140,11 @@
         cursor: pointer;
         box-shadow: 5px 15px 25px rgba(0, 0, 0, 0.35);
         border-radius: 3px; 
+    }
+    .submitPhotos {
+        position: relative;
+        min-height: 100vh;
+        
     }
     
 </style>
